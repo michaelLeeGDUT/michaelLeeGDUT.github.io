@@ -75,6 +75,168 @@
 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ '/assets/css/jekyll-theme-chirpy.css' | relative_url }}">
+  
+  <!-- Fallback styles for Chirpy theme -->
+  <style>
+    /* Basic Chirpy theme styles */
+    :root {
+      --main-bg: #ffffff;
+      --card-bg: #ffffff;
+      --text-color: #2a2a2a;
+      --text-muted-color: #757575;
+      --border-color: #e9ecef;
+      --sidebar-bg: #1e1e1e;
+      --sidebar-text-color: #ffffff;
+    }
+    
+    [data-mode="dark"] {
+      --main-bg: #1b1b1e;
+      --card-bg: #2a2a2a;
+      --text-color: #ffffff;
+      --text-muted-color: #c0c0c0;
+      --border-color: #444444;
+    }
+    
+    body {
+      font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text-color);
+      background-color: var(--main-bg);
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Sidebar styles */
+    #sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100vh;
+      width: 260px;
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text-color);
+      padding: 2rem 1rem;
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+    
+    #sidebar.unloaded {
+      transform: translateX(0);
+    }
+    
+    @media (min-width: 768px) {
+      #sidebar {
+        transform: translateX(0);
+      }
+      
+      #main {
+        margin-left: 260px;
+      }
+    }
+    
+    /* Main content */
+    #main {
+      min-height: 100vh;
+      padding: 2rem;
+      transition: margin-left 0.3s ease;
+    }
+    
+    /* Card styles */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    /* Post styles */
+    .post-preview {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .post-title {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    
+    .post-title:hover {
+      color: #007bff;
+    }
+    
+    .post-meta {
+      color: var(--text-muted-color);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .post-content {
+      line-height: 1.6;
+    }
+    
+    /* Navigation */
+    .nav-link {
+      color: var(--sidebar-text-color);
+      text-decoration: none;
+      padding: 0.5rem 0;
+      display: block;
+      border-radius: 0.25rem;
+    }
+    
+    .nav-link:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--sidebar-text-color);
+      text-decoration: none;
+    }
+    
+    /* Buttons */
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-primary {
+      background: #007bff;
+      color: white;
+    }
+    
+    /* Code blocks */
+    pre {
+      background: #f8f9fa;
+      padding: 1rem;
+      border-radius: 0.25rem;
+      overflow-x: auto;
+    }
+    
+    code {
+      background: #f8f9fa;
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.25rem;
+      font-family: 'Monaco', 'Menlo', monospace;
+    }
+    
+    /* Responsive */
+    @media (max-width: 767px) {
+      #main {
+        margin-left: 0;
+        padding: 1rem;
+      }
+      
+      #sidebar {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
 
   <!-- Web Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

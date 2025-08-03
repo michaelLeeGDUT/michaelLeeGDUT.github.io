@@ -1,7 +1,7 @@
-@forward 'search';
-@forward 'home';
-@forward 'post';
-@forward 'categories';
-@forward 'tags';
-@forward 'archives';
-@forward 'category-tag';
+@import 'search';
+@import 'home';
+@import 'post';
+@import 'categories';
+@import 'tags';
+@import 'archives';
+@import 'category-tag';
