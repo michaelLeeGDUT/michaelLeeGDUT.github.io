@@ -13,6 +13,14 @@
   {% assign read_time = min_time %}
 {% endunless %}
 
+{% capture read_prompt %}
+  {% if include.lang %}
+    {{ site.data.locales[include.lang].post.read_time.prompt | default: "Read time" }}
+  {% else %}
+    Read time
+  {% endif %}
+{% endcapture %}
+
 <!-- return element -->
 <span
   class="readtime"
@@ -23,6 +31,13 @@
   <em>
     {{- read_time -}}
     {{ ' ' }}
-    min
+    {% if include.lang %}
+      {{ site.data.locales[include.lang].post.read_time.unit | default: "min" }}
+    {% else %}
+      min
+    {% endif %}
   </em>
+  {%- if include.prompt -%}
+    {{ ' ' }}{{ read_prompt }}
+  {%- endif -%}
 </span>
